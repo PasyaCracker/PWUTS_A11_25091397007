@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "foto": "img/kaos_amiri_hitam.png",
+    "nama": "Kaos Amiri",
+    "harga": 150000,
+    "kondisi": "Baik",
+    "stok": 10,
+    "deskripsi": "kaos brand terkenal US amiri ",
+    "kategori": "preloved"
+  },
+  {
+    "id": 2,
+    "foto": "img/tas_pink.png",
+    "nama": "Tas pink glamour  Amiri",
+    "harga": 5000000,
+    "kondisi": "Baik",
+    "stok": 3,
+    "deskripsi": "tas pink menawan dari Amiri",
+    "kategori": "preloved"
+  },
+  {
+    "id": 3,
+    "foto": "img/jaket_gunung.png",
+    "nama": "Jaket Gunung Waterproof",
+    "harga": 200000,
+    "kondisi": "Seperti baru",
+    "stok": 1,
+    "kategori": "preloved",
+    "deskripsi": "jaket gunung anti air, dipakai 2 kali pendakian, resleting lancar"
+  },
+  {
+    "id": 4,
+    "foto": "img/carirer_60L.png",
+    "nama": "Carrier 60L",
+    "harga": 450000,
+    "kondisi": "Baik",
+    "stok": 3,
+    "kategori": "preloved",
+    "deskripsi": "tas carrier 60 liter, busa punggung masih empuk, ada rain cover"
+  },
+  {
+    "id": 5,
+    "foto": "img/sepatu_hiking_pria.png",
+    "nama": "Sepatu Hiking Pria Size 42",
+    "harga": 350000,
+    "kondisi": "Baik",
+    "stok": 2,
+    "kategori": "preloved",
+    "deskripsi": "sepatu hiking sol masih tebal, bagian dalam bersih"
+  },
+  {
+    "id": 6,
+    "foto": "img/celana_quick_dry.png",
+    "nama": "Celana Quick Dry",
+    "harga": 85000,
+    "kondisi": "Seperti baru",
+    "stok": 6,
+    "kategori": "preloved",
+    "deskripsi": "celana lapangan cepat kering, bahan ringan, ukuran L"
+  },
+  {
+    "id": 7,
+    "foto": "img/led_headlamp.png",
+    "nama": "Headlamp LED Rechargeable",
+    "harga": 65000,
+    "kondisi": "Baik",
+    "stok": 8,
+    "kategori": "preloved",
+    "deskripsi": "headlamp 3 mode cahaya, bisa diisi ulang lewat USB"
+  },
+  {
+    "id": 8,
+    "foto": "img/matras_gulung.png",
+    "nama": "Matras Gulung",
+    "harga": 40000,
+    "kondisi": "Cukup",
+    "stok": 5,
+    "kategori": "preloved",
+    "deskripsi": "matras alumunium foil, ada sedikit lecet di pinggir"
+  },
+  {
+    "id": 9,
+    "foto": "img/tenda_4orang.png",
+    "nama": "Tenda Dome Kapasitas 4",
+    "harga": 75000,
+    "kondisi": "Baik",
+    "stok": 4,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, tenda double layer, lengkap frame dan pasak"
+  },
+  {
+    "id": 10,
+    "foto": "img/sleeping_bag_polar.png",
+    "nama": "Sleeping Bag Polar",
+    "harga": 25000,
+    "kondisi": "Baik",
+    "stok": 10,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, hangat sampai 10 derajat celcius, sudah dicuci"
+  },
+  {
+    "id": 11,
+    "foto": "img/kompor_portabel.png",
+    "nama": "Kompor Portable + Gas",
+    "harga": 20000,
+    "kondisi": "Baik",
+    "stok": 6,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, kompor lipat dengan 1 tabung gas"
+  },
+  {
+    "id": 12,
+    "foto": "img/trekking_pole.png",
+    "nama": "Trekking Pole (sepasang)",
+    "harga": 15000,
+    "kondisi": "Baik",
+    "stok": 8,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, tongkat teleskopik, tinggi bisa diatur"
+  },
+  {
+    "id": 13,
+    "foto": "img/carrier_50L.png",
+    "nama": "Carrier 50L",
+    "harga": 30000,
+    "kondisi": "Baik",
+    "stok": 5,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, cocok untuk pendakian 2 hari 1 malam"
+  },
+  {
+    "id": 14,
+    "foto": "img/flysheet.png",
+    "nama": "Flysheet 3x4",
+    "harga": 15000,
+    "kondisi": "Baik",
+    "stok": 7,
+    "kategori": "sewa",
+    "deskripsi": "sewa per hari, terpal pelindung hujan ukuran 3x4 meter"
+  }
+]
