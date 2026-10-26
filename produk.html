@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelola Produk | Admin Preloved</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <header class="page-header">
+      <div>
+        <h1>Kelola Produk</h1>
+        <p>Tambah, ubah, dan atur stok barang preloved dan sewa</p>
+      </div>
+      <!-- id dibedakan dari modal (sebelumnya sama-sama "modal-produk") -->
+      <button type="button" id="btn-tambah" class="btn">+ Tambah Produk</button>
+    </header>
+
+    <!-- Pencarian / filter -->
+    <div class="toolbar">
+      <input type="search" id="cari-produk" placeholder="Cari nama produk...">
+      <select id="filter-kategori">
+        <option value="">Semua kategori</option>
+        <option value="preloved">Preloved</option>
+        <option value="sewa">Sewa</option>
+      </select>
+      <select id="filter-kondisi">
+        <option value="">Semua kondisi</option>
+        <option>Seperti baru</option>
+        <option>Baik</option>
+        <option>Cukup</option>
+      </select>
+      <button type="button" id="btn-reset" class="btn btn-outline">Reset data</button>
+    </div>
+
+    <!-- Tabel produk (thumbnail kecil) -->
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nama</th>
+              <th>Harga</th>
+              <th>Kondisi</th>
+              <th>Stok</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <!-- Diisi oleh renderTable() di js/app.js -->
+          <tbody id="tabel-produk"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal form tambah/edit (galeri besar) -->
+  <div class="modal" id="modal-produk">
+    <div class="modal-box wide">
+      <div class="modal-head">
+        <h2 id="judul-modal">Tambah Produk</h2>
+        <button type="button" class="modal-close tutup-modal" aria-label="Tutup">&times;</button>
+      </div>
+
+      <!-- novalidate: validasi kita tangani sendiri lewat JS -->
+      <form id="form-produk" class="product-form" novalidate>
+
+        <!-- Kosong = tambah baru, terisi = edit produk dengan id itu -->
+        <input type="hidden" id="produk-id" name="id">
+
+        <!-- Kiri: galeri multi-angle -->
+        <div>
+          <div class="gallery-main" id="gallery-utama"><span>Foto utama</span></div>
+          <div class="gallery-thumbs">
+            <label class="slot" data-slot="0"><span>Depan</span><input type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+            <label class="slot" data-slot="1"><span>Belakang</span><input type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+            <label class="slot" data-slot="2"><span>Samping</span><input type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+            <label class="slot" data-slot="3"><span>Detail</span><input type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+            <label class="slot" data-slot="4"><span>Cacat</span><input type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+          </div>
+          <small class="error" data-for="foto"></small>
+          <small class="hint">Foto depan wajib. PNG/JPG/WEBP, maks 2 MB per foto.</small>
+        </div>
+
+        <!-- Kanan: data produk -->
+        <div>
+          <div class="form-group">
+            <label for="nama">Nama produk</label>
+            <input type="text" id="nama" name="nama" maxlength="60">
+            <small class="error" data-for="nama"></small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="harga">Harga (Rp)</label>
+              <input type="number" id="harga" name="harga" min="0" step="1">
+              <small class="error" data-for="harga"></small>
+            </div>
+            <div class="form-group">
+              <label for="stok">Stok</label>
+              <input type="number" id="stok" name="stok" min="0" step="1">
+              <small class="error" data-for="stok"></small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="kategori">Kategori</label>
+              <select id="kategori" name="kategori">
+                <option value="preloved">Preloved (dijual)</option>
+                <option value="sewa">Sewa (per hari)</option>
+              </select>
+              <small class="error" data-for="kategori"></small>
+            </div>
+            <div class="form-group">
+              <label for="kondisi">Kondisi</label>
+              <select id="kondisi" name="kondisi">
+                <option>Seperti baru</option>
+                <option>Baik</option>
+                <option>Cukup</option>
+              </select>
+              <small class="error" data-for="kondisi"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="deskripsi">Deskripsi</label>
+            <textarea id="deskripsi" name="deskripsi" rows="4" maxlength="300"></textarea>
+            <small class="error" data-for="deskripsi"></small>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="modal-foot">
+        <button type="button" class="btn btn-outline tutup-modal">Batal</button>
+        <button type="submit" form="form-produk" class="btn" id="btn-simpan">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar bawah -->
+  <nav class="nav-dock">
+    <a href="index.html">Dashboard</a>
+    <a href="produk.html" class="active">Produk</a>
+    <a href="pesanan.html">Pesanan</a>
+  </nav>
+
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/umum.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RimbaLestari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+ 
+    <header class="page-header">
+      <div>
+        <h1>Dashboard Admin Rimba Lestari</h1>
+        <p>Ringkasan penjualan dan pesanan terbaru</p>
+      </div>
+    </header>
+ 
+    <!-- Kartu statistik
+         TODO JS/AJAX: isi angka di .value dari server -->
+    <section class="stat-grid">
+      <article class="card stat-card">
+        <div class="label">Total Penjualan</div>
+        <div class="value" id="stat-penjualan">Rp 0</div>
+        <div class="note">bulan ini</div>
+      </article>
+      <article class="card stat-card">
+        <div class="label">Pesanan Baru</div>
+        <div class="value" id="stat-pesanan-baru">0</div>
+        <div class="note">perlu diproses</div>
+      </article>
+      <article class="card stat-card">
+        <div class="label">Produk Aktif</div>
+        <div class="value" id="stat-produk">0</div>
+        <div class="note">tersedia</div>
+      </article>
+      <article class="card stat-card">
+        <div class="label">Stok Menipis</div>
+        <div class="value" id="stat-stok-tipis">0</div>
+        <div class="note">kurang dari 3</div>
+      </article>
+    </section>
+ 
+    <!-- Grafik + ringkasan laporan -->
+    <section class="dash-grid">
+      <article class="card">
+        <h2>Grafik Penjualan</h2>
+        <!-- TODO JS: ganti dengan <canvas id="chartPenjualan"> (Chart.js) -->
+        <div class="chart-box" id="chartPenjualan">Area grafik</div>
+      </article>
+ 
+      <article class="card">
+        <h2>Laporan Transaksi</h2>
+        <ul class="summary-list">
+          <li><span>Transaksi</span><strong id="lap-jumlah">0</strong></li>
+          <li><span>Pendapatan</span><strong id="lap-pendapatan">Rp 0</strong></li>
+          <li><span>Rata-rata order</span><strong id="lap-rata">Rp 0</strong></li>
+        </ul>
+        <!-- TODO JS: ekspor CSV / cetak -->
+        <button class="btn" id="btn-ekspor" type="button">Ekspor Laporan</button>
+      </article>
+    </section>
+ 
+    <!-- Pesanan terbaru -->
+    <section class="card">
+      <div class="page-header" style="margin-bottom: 8px;">
+        <h2 style="margin: 0;">Pesanan Terbaru</h2>
+        <a href="pesanan.html" class="btn btn-outline btn-sm">Lihat semua</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Pembeli</th>
+              <th>Total</th>
+              <th>Tanggal</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <!-- TODO JS/AJAX: isi tbody dari data pesanan -->
+          <tbody id="tabel-pesanan-terbaru">
+            <tr>
+              <td>#INV-001</td>
+              <td>Nama Pembeli</td>
+              <td>Rp 150.000</td>
+              <td>26 Okt 2026</td>
+              <td><span class="badge badge-baru">Baru</span></td>
+            </tr>
+            <tr>
+              <td>#INV-002</td>
+              <td>Nama Pembeli</td>
+              <td>Rp 275.000</td>
+              <td>25 Okt 2026</td>
+              <td><span class="badge badge-dikirim">Dikirim</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <!-- Navbar bawah -->
+  <nav class="nav-dock">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="produk.html">Produk</a>
+    <a href="pesanan.html">Pesanan</a>
+  </nav>
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/umum.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

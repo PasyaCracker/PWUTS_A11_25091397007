@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesanan Masuk | Admin Preloved</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <header class="page-header">
+      <div>
+        <h1>Pesanan Masuk</h1>
+        <p>Pantau status dan konfirmasi pengiriman</p>
+      </div>
+    </header>
+
+    <!-- Tab status. Angka di .count diisi otomatis oleh JS -->
+    <div class="tabs">
+      <button type="button" class="tab active" data-status="baru">Baru <span class="count">0</span></button>
+      <button type="button" class="tab" data-status="dikemas">Dikemas <span class="count">0</span></button>
+      <button type="button" class="tab" data-status="dikirim">Dikirim <span class="count">0</span></button>
+      <button type="button" class="tab" data-status="selesai">Selesai <span class="count">0</span></button>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" id="cari-pesanan" placeholder="Cari kode atau nama pembeli di tab ini...">
+      <button type="button" id="btn-reset" class="btn btn-outline">Reset data</button>
+    </div>
+
+    <!-- Daftar pesanan -->
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Pembeli</th>
+              <th>Total</th>
+              <th>Tanggal</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <!-- Diisi oleh renderTabel() di js/pesanan.js -->
+          <tbody id="tabel-pesanan"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal detail pesanan. Isinya diisi JS, bagian bawah (#aksi-pesanan) berubah sesuai status -->
+  <div class="modal" id="modal-detail">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="judul-detail">Detail Pesanan</h2>
+        <button type="button" class="modal-close tutup-modal" aria-label="Tutup">&times;</button>
+      </div>
+
+      <dl class="order-info" id="info-pesanan"></dl>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Jml</th><th>Harga</th><th>Subtotal</th></tr>
+          </thead>
+          <tbody id="detail-item"></tbody>
+          <tfoot>
+            <tr><td colspan="3">Total</td><td id="detail-total"></td></tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="aksi-box" id="aksi-pesanan"></div>
+
+      <div class="modal-foot">
+        <button type="button" class="btn btn-outline tutup-modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar bawah -->
+  <nav class="nav-dock">
+    <a href="index.html">Dashboard</a>
+    <a href="produk.html">Produk</a>
+    <a href="pesanan.html" class="active">Pesanan</a>
+  </nav>
+
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/umum.js"></script>
+  <script src="js/pesanan.js"></script>
+</body>
+</html>
